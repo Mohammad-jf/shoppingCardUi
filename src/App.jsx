@@ -10,7 +10,7 @@ const App = () => {
     const fetchProducts = async () => {
       setLoading(true);
       try {
-        const res = await fetch("http://localhost:3001/products");
+        const res = await fetch("/api/products");
         if (!res.ok) throw new Error("Failed To Fetch Products");
         const data = await res.json();
         setProducts(data);

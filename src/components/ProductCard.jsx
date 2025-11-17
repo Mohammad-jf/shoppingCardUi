@@ -4,7 +4,7 @@ const ProductCard = ({ product }) => {
   return (
     <div
       key={product.id}
-      className="bg-white p-4 rounded-lg shadow flex flex-col"
+      className="bg-white p-4 rounded-lg shadow flex flex-col cursor-pointer"
     >
       <img
         src={product.image}
