@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 export const ProductContext = createContext();
 
@@ -30,4 +30,8 @@ export function ProductProvider({ children }) {
       {children}
     </ProductContext.Provider>
   );
+}
+
+export function useProducts() {
+  return useContext(ProductContext);
 }

@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
 import ProductList from "./components/ProductList";
-import { ProductContext } from "./context/productContext";
+import { ProductContext, useProducts } from "./context/productContext";
 
 const App = () => {
-  const { loading, error, products } = useContext(ProductContext);
+  const { loading, error, products } = useProducts();
 
   return (
     <>
