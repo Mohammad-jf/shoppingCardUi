@@ -1,28 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import ProductList from "./components/ProductList";
+import { ProductContext } from "./context/productContext";
 
 const App = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      setLoading(true);
-      try {
-        const res = await fetch("/api/products");
-        if (!res.ok) throw new Error("Failed To Fetch Products");
-        const data = await res.json();
-        setProducts(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
-  }, []);
+  const { loading, error, products } = useContext(ProductContext);
 
   return (
     <>
